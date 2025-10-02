@@ -321,7 +321,7 @@ body::before{
   <div id="list"></div>
 </div>
   <script>
-    const API = 'https://script.google.com/macros/s/AKfycbw-5EWFBa6FtTkkVlQV03vhc5eT9ZEBo6VyWF020T9q2g937fj3DjXCudwSK13rKmiC/exec';
+    const API = 'https://script.google.com/macros/s/AKfycbxD6lpOp3opnXQhCSphl32iw9wbU0s9eCgve-qhsGoLHoIpoLtowPZfFMlGFWmeLzoo/exec';
     let allData = [];
 
     async function loadList() {
@@ -354,7 +354,7 @@ Object.entries(map).forEach(([cat, arr]) => {
   arr.forEach(a => {
     const b = document.createElement('button');
     b.textContent = a.judul;
-    b.onclick = () => window.location = `https://hbmonline.github.io/rumusan.html?id=${a.id}`;
+    b.onclick = () => window.location = `https://gubukfiqih.github.io/rumusan.html?id=${a.id}`;
     divArt.appendChild(b);
   });
 
@@ -422,7 +422,7 @@ Object.entries(map).forEach(([cat, arr]) => {
 
           frag.innerHTML = `
             <div class="kategori-label">Kategori: ${item.kategori}</div>
-            <a href="https://hbmonline.github.io/rumusan.html?id=${item.id}"><b>${item.judul}</b></a>
+            <a href="https://gubukfiqih.github.io/rumusan.html?id=${item.id}"><b>${item.judul}</b></a>
             <div>${preview}...</div>
           `;
           result.appendChild(frag);
@@ -463,11 +463,10 @@ Object.entries(map).forEach(([cat, arr]) => {
     <i class="fas fa-user"></i>
   </button>
   <div class="admin-menu" id="adminMenu">
-    <button onclick="location.href='upRumusan.html'"><i class="fas fa-upload"></i> Upload Rumusan</button>
-    <button onclick="location.href='upSoal.html'"><i class="fas fa-paper-plane"></i> Kirim Soal</button>
-    <button onclick="location.href='maktabah.html'"><i class="fas fa-book-reader"></i> Maktabah</button>
-    <button onclick="location.href='../bm/admin/login.html'"><i class="fas fa-user"></i> Ruang Admin</button>
-    <button onclick="location.href='tentang.html'"><i class="fas fa-info-circle"></i> Tentang Aplikasi</button>
+    <button onclick="location.href='bertanya.html'"><i class="fas fa-paper-plane"></i> Kirim Soal</button>
+    <button onclick="location.href='library.html'"><i class="fas fa-book-reader"></i> Maktabah</button>
+    <button onclick="location.href='/admin/login.html'"><i class="fas fa-user"></i> Ruang Admin</button>
+    <button onclick="location.href='#'"><i class="fas fa-info-circle"></i> Tentang Aplikasi</button>
   </div>  
 </div>
 </body>

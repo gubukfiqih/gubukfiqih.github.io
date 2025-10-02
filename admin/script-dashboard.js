@@ -1,4 +1,4 @@
-const API_URL = 'https://script.google.com/macros/s/AKfycbzTAbfO_J9sE6g7lXBa9i67otum9z9vEbwzOqNrkApgH8nWoKvZTTZRAndGb4zMA2WeXw/exec';
+const API_URL = 'https://script.google.com/macros/s/AKfycbzkoVPjuPm-qxossCM9OExUSungoN1bJVc88lUi2BSgqCr8XpkCn6lx07Z1PvOrkSNq/exec';
 
 window.onload = () => {
   const params = new URLSearchParams(window.location.search);
