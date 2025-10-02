@@ -18,12 +18,31 @@
     <title>PUSTAKA</title>
 <style>
        
-  body {
-    padding: 0px; /* Menambahkan padding pada body */
-    font-family: Arial, sans-serif; /* Menambahkan font yang umum digunakan */
-    background-color: #f0f0f0; /* Warna latar belakang seperti di Facebook */
-    margin: 0; /* Menghilangkan margin default */
-  }
+       /* Reset dan dasar */
+       html, body { height: 100%; }
+
+       body {
+         position: relative;
+         margin: 0;
+         color: #333;
+         background-color: #f5f7fa; /* fallback */
+         z-index: 0;
+       }
+       
+       /* background image di pseudo-element supaya opacity gak mempengaruhi konten */
+       body::before{
+         content: "";
+         position: fixed;        /* tetap saat scroll */
+         inset: 0;               /* top:0; right:0; bottom:0; left:0; */
+         background-image: url('/img/bacground2.jpg');
+         background-size: cover;
+         background-position: center;
+         background-repeat: no-repeat;
+         opacity: 0.30;          /* atur transparansi gambar di sini */
+         z-index: -1;            /* berada di belakang konten */
+         pointer-events: none;   /* supaya tidak mengganggu klik */
+       }
+       
   @font-face {
     font-family: 'CustomArabicFont';
     src: url('arabic-font.ttf') format('truetype');
@@ -709,59 +728,6 @@ document.querySelector('.search-box').addEventListener('submit', function(event)
       getData(SPREADSHEET_ID_2, RANGE_2, 'dataTable2');
     </script>
 </div>
-    <div class="navbar">
-        <div class="nav-item active" data-name="Home" data-link="index.html">
-          <i class="fa-solid fa-house"></i>
-          <span>Home</span>
-        </div>
-        <div class="nav-item" data-name="Bertanya" data-link="bertanya.html">
-          <i class="fa-solid fa-paper-plane"></i>
-          <span>Bertanya</span>
-        </div>
-        <div class="nav-item" data-name="Library" data-link="library.html">
-          <i class="fa-solid fa-book"></i>
-          <span>Library</span>
-        </div>
-        <div class="nav-item" data-name="Admin" data-link="admin/dashboard.html">
-          <i class="fa-solid fa-user"></i>
-          <span>Admin</span>
-        </div>
-      </div>  
-      <script>
-        const navItems = document.querySelectorAll('.nav-item');
-      
-        function tandaiNavbarAktif() {
-          const currentPath = window.location.pathname.split("/").pop(); // Ambil nama file: home.html, library.html, dll
-      
-          navItems.forEach(item => {
-            const link = item.getAttribute('data-link');
-            if (link === currentPath || (link === "home.html" && (currentPath === "" || currentPath === "index.html"))) {
-              item.classList.add('active');
-            } else {
-              item.classList.remove('active');
-            }
-          });
-        }
-      
-        navItems.forEach(item => {
-          item.addEventListener('click', () => {
-            const link = item.getAttribute('data-link');
-            if (link) {
-              window.location.href = link;
-            }
-          });
-        });
-      
-        // Jalankan saat halaman dimuat
-        tandaiNavbarAktif();
-      
-        // Cegah tombol kembali di WebView
-        history.pushState(null, null, location.href);
-        window.addEventListener('popstate', function () {
-          window.close(); // akan berfungsi di WebView
-          history.go(1);  // cegah kembali
-        });
-      </script>
-      
+
   </body>
   </html>

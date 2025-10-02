@@ -362,58 +362,6 @@ margin-bottom: 70px;
     }
   </script>
 </div>
-  <div class="navbar">
-    <div class="nav-item active" data-name="Home" data-link="index.html">
-      <i class="fa-solid fa-house"></i>
-      <span>Home</span>
-    </div>
-    <div class="nav-item" data-name="Bertanya" data-link="bertanya.html">
-      <i class="fa-solid fa-paper-plane"></i>
-      <span>Bertanya</span>
-    </div>
-    <div class="nav-item" data-name="Library" data-link="library.html">
-      <i class="fa-solid fa-book"></i>
-      <span>Library</span>
-    </div>
-    <div class="nav-item" data-name="Admin" data-link="admin/dashboard.html">
-      <i class="fa-solid fa-user"></i>
-      <span>Admin</span>
-    </div>
-  </div>  
-  <script>
-    const navItems = document.querySelectorAll('.nav-item');
-  
-    function tandaiNavbarAktif() {
-      const currentPath = window.location.pathname.split("/").pop(); // Ambil nama file: home.html, library.html, dll
-  
-      navItems.forEach(item => {
-        const link = item.getAttribute('data-link');
-        if (link === currentPath || (link === "home.html" && (currentPath === "" || currentPath === "index.html"))) {
-          item.classList.add('active');
-        } else {
-          item.classList.remove('active');
-        }
-      });
-    }
-  
-    navItems.forEach(item => {
-      item.addEventListener('click', () => {
-        const link = item.getAttribute('data-link');
-        if (link) {
-          window.location.href = link;
-        }
-      });
-    });
-  
-    // Jalankan saat halaman dimuat
-    tandaiNavbarAktif();
-  
-    // Cegah tombol kembali di WebView
-    history.pushState(null, null, location.href);
-    window.addEventListener('popstate', function () {
-      window.close(); // akan berfungsi di WebView
-      history.go(1);  // cegah kembali
-    });
-  </script>
+ 
 </body>
 </html>
