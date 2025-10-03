@@ -55,6 +55,15 @@ function logout() {
   window.location.href = "login.html";
 }
 
-
   const params = new URLSearchParams(window.location.search);
   const userId = params.get("id");
+
+function openSheet(sheetId) {
+  const url = `https://docs.google.com/spreadsheets/d/${sheetId}/edit?usp=sharing`;
+
+  if (typeof AndroidFunction !== "undefined") {
+    AndroidFunction.openLink(url); // buka via aplikasi Google Sheets
+  } else {
+    window.open(url, "_blank"); // fallback kalau buka di browser
+  }
+}
